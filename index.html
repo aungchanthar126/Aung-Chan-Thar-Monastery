@@ -107,7 +107,7 @@
       position: relative;
       height: 85vh;
       min-height: 500px;
-      background: url('hero1.png') center/cover no-repeat;
+      background: url('gate-clean.png') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -118,7 +118,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(44,24,16,0.55), rgba(92,10,10,0.7));
+      background: linear-gradient(to bottom, rgba(44,24,16,0.45), rgba(92,10,10,0.75));
     }
 
     .hero-content {
@@ -249,22 +249,26 @@
     }
 
     /* Sayadaw */
+    .sayadaw-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
     .sayadaw-card {
       background: var(--white);
       border-radius: 20px;
-      padding: 40px;
+      padding: 35px 30px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.08);
       border: 1px solid var(--cream-dark);
       text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
     .sayadaw-card .sayadaw-photo {
-      width: 220px;
+      width: 200px;
       height: auto;
       border-radius: 12px;
-      margin: 0 auto 25px;
+      margin: 0 auto 20px;
       display: block;
       box-shadow: 0 8px 25px rgba(0,0,0,0.15);
       border: 3px solid var(--gold);
@@ -272,25 +276,25 @@
 
     .sayadaw-card h3 {
       color: var(--deep-red);
-      font-size: 1.5rem;
-      margin-bottom: 8px;
+      font-size: 1.35rem;
+      margin-bottom: 6px;
     }
 
     .sayadaw-card .title {
       color: var(--gold);
-      font-size: 1.05rem;
-      margin-bottom: 12px;
+      font-size: 1rem;
+      margin-bottom: 10px;
       font-weight: 500;
     }
 
     .sayadaw-card .titles {
       background: var(--cream);
-      padding: 20px;
+      padding: 16px 18px;
       border-radius: 12px;
-      margin-top: 20px;
+      margin-top: 16px;
       text-align: left;
-      font-size: 0.98rem;
-      line-height: 1.8;
+      font-size: 0.92rem;
+      line-height: 1.7;
     }
 
     /* Gallery */
@@ -504,7 +508,7 @@
     <div class="hero-content">
       <img src="logo.png" alt="Logo">
       <h2>အောင်ချမ်းသာစာသင်တိုက်</h2>
-      <p>သီလ • သမာဓိ • ပညာ<br>၁၃၂၇ ခုနှစ်မှ စတင်တည်ထောင်ခဲ့သည်</p>
+      <p>သီလ • သမာဓိ • ပညာ<br>၁၃၂၇-ခုနှစ်မှ စတင်တည်ထောင်ခဲ့သည်။</p>
       <a href="#about" class="hero-btn">ပိုမိုလေ့လာရန်</a>
     </div>
   </section>
@@ -519,7 +523,7 @@
         <div class="about-text">
           <h3>အောင်ချမ်းသာစာသင်တိုက်</h3>
           <p>
-            အောင်ချမ်းသာစာသင်တိုက်သည် ရှမ်းပြည်နယ်တောင်ပိုင်း၊ ကလောခရိုင်၊ ကလောမြို့နယ်၊ အောင်ပန်းမြို့တွင် တည်ရှိသော ဘုန်းကြီးစာသင်တိုက်တစ်ခုဖြစ်သည်။ ၁၃၂၇ ခုနှစ်တွင် စတင်တည်ထောင်ခဲ့ပြီး သာသနာ့အကျိုးကို ဆောင်ရွက်လျက်ရှိသည်။
+            အောင်ချမ်းသာစာသင်တိုက်သည် ရှမ်းပြည်နယ်တောင်ပိုင်း၊ ကလောခရိုင်၊ ကလောမြို့နယ်၊ အောင်ပန်းမြို့တွင် တည်ရှိသော ဘုန်းကြီးစာသင်တိုက်တစ်ခုဖြစ်သည်။ ၁၃၂၇-ခုနှစ်တွင် စတင်တည်ထောင်ခဲ့ပြီး သာသနာ့အကျိုးကို ဆောင်ရွက်လျက်ရှိသည်။
           </p>
           <div class="info-item">
             <span>📍</span>
@@ -533,13 +537,13 @@
             <span>📅</span>
             <div>
               <strong>စတင်တည်ထောင်နှစ်</strong><br>
-              ၁၃၂၇ ခုနှစ်
+              ၁၃၂၇-ခုနှစ်
             </div>
           </div>
           <div class="info-item">
             <span>🙏</span>
             <div>
-              <strong>ဦးစီးပဓာနနာယကဆရာတော်ကြီး</strong><br>
+              <strong>ဦးစီးပဓာနနာယကဆရာတော်</strong><br>
               ဘဒ္ဒန္တပညာဝံသမထေရ်
             </div>
           </div>
@@ -555,20 +559,36 @@
   <section id="sayadaw" style="background: var(--cream-dark);">
     <div class="container">
       <div class="section-title">
-        <h2>ဦးစီးပဓာနနာယကဆရာတော်ကြီး</h2>
+        <h2>ဦးစီးပဓာနနာယကဆရာတော်နှင့်(ယခင်)တိုက်အုပ်ဆရာတော်</h2>
       </div>
-      <div class="sayadaw-card">
-        <img src="sayadaw.png" alt="ဘဒ္ဒန္တပညာဝံသမထေရ်" class="sayadaw-photo">
-        <h3>ဘဒ္ဒန္တပညာဝံသမထေရ်</h3>
-        <p class="title">ဦးစီးပဓာနနာယကဆရာတော်ကြီး</p>
-        <p>အောင်ပန်းမြို့၊ အောင်ချမ်းသာစာသင်တိုက်</p>
-        <div class="titles">
-          <strong>ဘွဲ့တံဆိပ်များ</strong><br>
-          • သာသနဓဇဓမ္မာစရိယ<br>
-          • မဟာဂန္ထဝါစကပဏ္ဍိတ<br>
-          • အဂ္ဂမဟာဂန္ထဝါစကပဏ္ဍိတ<br>
-          • အဂ္ဂမဟာပဏ္ဍိတ<br>
-          • နိုင်ငံတော်ဗဟိုသံဃာ့ဝန်ဆောင် (ငြိမ်း)
+      <div class="sayadaw-grid">
+        <!-- ပဓာနဆရာတော် -->
+        <div class="sayadaw-card">
+          <img src="sayadaw.png" alt="ဘဒ္ဒန္တပညာဝံသမထေရ်" class="sayadaw-photo">
+          <h3>ဘဒ္ဒန္တပညာဝံသမထေရ်</h3>
+          <p class="title">ဦးစီးပဓာနနာယကဆရာတော်ကြီး</p>
+          <p>အောင်ချမ်းသာစာသင်တိုက်</p>
+          <div class="titles">
+            <strong>ဘွဲ့တံဆိပ်များ</strong><br>
+            • သာသနဓဇဓမ္မာစရိယ<br>
+            • မဟာဂန္ထဝါစကပဏ္ဍိတ<br>
+            • အဂ္ဂမဟာဂန္ထဝါစကပဏ္ဍိတ<br>
+            • အဂ္ဂမဟာပဏ္ဍိတ<br>
+            • နိုင်ငံတော်ဗဟိုသံဃာ့ဝန်ဆောင်(ငြိမ်း)
+          </div>
+        </div>
+        <!-- တိုက်အုပ်ဆရာတော် -->
+        <div class="sayadaw-card">
+          <img src="taikok-web.jpg" alt="ဘဒ္ဒန္တနာဂသေန" class="sayadaw-photo">
+          <h3>ဘဒ္ဒန္တနာဂသေန</h3>
+          <p class="title">တိုက်အုပ်ဆရာတော်</p>
+          <p>အောင်ချမ်းသာစာသင်တိုက်</p>
+          <div class="titles">
+            <strong>ဘွဲ့တော် / တာဝန်များ</strong><br>
+            • ဓမ္မာစရိယ<br>
+            • မြို့နယ် / ပြည်နယ် ဝိနည်းဓိုရ်ဆရာတော်<br>
+            • ကလောမြို့နယ် သံဃနာယကအဖွဲ့ အကျိုးတော်ဆောင်ဆရာတော်
+          </div>
         </div>
       </div>
     </div>
@@ -582,7 +602,7 @@
       </div>
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="hero1.png" alt="စာသင်တိုက် ဝင်ပေါက်">
+          <img src="gate-clean.png" alt="စာသင်တိုက် ဝင်ပေါက်">
         </div>
         <div class="gallery-item">
           <img src="aerial1.jpg" alt="အပေါ်မြင်ကွင်း ၁">
@@ -618,7 +638,7 @@
         </div>
         <div class="edu-card">
           <div class="icon">🏅</div>
-          <h4>အစိုးရဓမ္မာစရိယကျမ်းစာ</h4>
+          <h4>အစိုးရဓမ္မာစရိယတန်းကျမ်းစာ</h4>
           <p>ဓမ္မာစရိယ အဆင့်</p>
         </div>
       </div>
