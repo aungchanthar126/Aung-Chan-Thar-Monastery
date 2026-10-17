@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>အောင်ချမ်းသာစာသင်တိုက် | Aung Chan Thar Sathin Taik</title>
+  <link rel="icon" href="logo.png" type="image/png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --gold: #d4a017;
+      --gold-light: #f0d78c;
+      --deep-red: #8b1a1a;
+      --maroon: #5c0a0a;
+      --cream: #fdf6e3;
+      --cream-dark: #f5e6c8;
+      --dark: #2c1810;
+      --text: #3a2a1a;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans Myanmar', 'Myanmar Text', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--maroon), var(--deep-red));
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-area img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      object-fit: cover;
+    }
+
+    .logo-area h1 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gold-light);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--gold-light);
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      height: 85vh;
+      min-height: 500px;
+      background: url('hero1.png') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(44,24,16,0.55), rgba(92,10,10,0.7));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+      padding: 20px;
+      max-width: 800px;
+    }
+
+    .hero-content img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      margin-bottom: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+
+    .hero-content h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      opacity: 0.95;
+      margin-bottom: 25px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 12px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(212,160,23,0.4);
+    }
+
+    .hero-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    section {
+      padding: 70px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 1.9rem;
+      color: var(--deep-red);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      color: var(--deep-red);
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+
+    .about-text .info-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      align-items: flex-start;
+    }
+
+    .about-text .info-item span {
+      color: var(--gold);
+      font-size: 1.3rem;
+      min-width: 28px;
+    }
+
+    .about-img {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Sayadaw */
+    .sayadaw-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      border: 1px solid var(--cream-dark);
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .sayadaw-card .sayadaw-photo {
+      width: 220px;
+      height: auto;
+      border-radius: 12px;
+      margin: 0 auto 25px;
+      display: block;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      border: 3px solid var(--gold);
+    }
+
+    .sayadaw-card h3 {
+      color: var(--deep-red);
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .sayadaw-card .title {
+      color: var(--gold);
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .sayadaw-card .titles {
+      background: var(--cream);
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+      text-align: left;
+      font-size: 0.98rem;
+      line-height: 1.8;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      position: relative;
+      aspect-ratio: 16/10;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Education */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .edu-card {
+      background: var(--white);
+      padding: 30px 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      border-top: 4px solid var(--gold);
+      transition: transform 0.3s;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .edu-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .edu-card h4 {
+      color: var(--deep-red);
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info {
+      background: linear-gradient(135deg, var(--maroon), var(--deep-red));
+      color: var(--white);
+      padding: 40px;
+      border-radius: 20px;
+    }
+
+    .contact-info h3 {
+      color: var(--gold-light);
+      margin-bottom: 25px;
+      font-size: 1.4rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      align-items: flex-start;
+    }
+
+    .contact-item .icon {
+      font-size: 1.4rem;
+      color: var(--gold);
+      min-width: 30px;
+    }
+
+    .contact-item a {
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .donation-box {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .donation-box h3 {
+      color: var(--deep-red);
+      margin-bottom: 15px;
+    }
+
+    .donation-box p {
+      margin-bottom: 20px;
+    }
+
+    .donation-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      padding: 14px 36px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .donation-btn:hover {
+      background: var(--gold-light);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: var(--cream-dark);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--maroon);
+        flex-direction: column;
+        padding: 15px;
+        gap: 5px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .hero-content h2 {
+        font-size: 1.7rem;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-area h1 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-area">
+        <img src="logo.png" alt="အောင်ချမ်းသာစာသင်တိုက် လိုဂို">
+        <h1>အောင်ချမ်းသာစာသင်တိုက်</h1>
+      </div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="#home">ပင်မ</a></li>
+          <li><a href="#about">အကြောင်း</a></li>
+          <li><a href="#sayadaw">ဆရာတော်</a></li>
+          <li><a href="#gallery">ဓာတ်ပုံ</a></li>
+          <li><a href="#education">ပညာရေး</a></li>
+          <li><a href="#contact">ဆက်သွယ်ရန်</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <img src="logo.png" alt="Logo">
+      <h2>အောင်ချမ်းသာစာသင်တိုက်</h2>
+      <p>သီလ • သမာဓိ • ပညာ<br>၁၃၂၇ ခုနှစ်မှ စတင်တည်ထောင်ခဲ့သည်</p>
+      <a href="#about" class="hero-btn">ပိုမိုလေ့လာရန်</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>စာသင်တိုက်အကြောင်း</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>အောင်ချမ်းသာစာသင်တိုက်</h3>
+          <p>
+            အောင်ချမ်းသာစာသင်တိုက်သည် ရှမ်းပြည်နယ်တောင်ပိုင်း၊ ကလောခရိုင်၊ ကလောမြို့နယ်၊ အောင်ပန်းမြို့တွင် တည်ရှိသော ဘုန်းကြီးစာသင်တိုက်တစ်ခုဖြစ်သည်။ ၁၃၂၇ ခုနှစ်တွင် စတင်တည်ထောင်ခဲ့ပြီး သာသနာ့အကျိုးကို ဆောင်ရွက်လျက်ရှိသည်။
+          </p>
+          <div class="info-item">
+            <span>📍</span>
+            <div>
+              <strong>လိပ်စာ</strong><br>
+              ပြည်ထောင်စုလမ်းမ၊ အမှတ်(၃)ရပ်ကွက်၊ အောင်ပန်းမြို့၊ ကလောမြို့နယ်၊ ကလောခရိုင်၊ ရှမ်းပြည်နယ်တောင်ပိုင်း<br>
+              <a href="https://maps.app.goo.gl/AURmZ2WXLwHuTBzG7" target="_blank" style="color:#d4a017; text-decoration:none; font-size:0.95rem;">📍 Google Maps တွင် ကြည့်ရန်</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <span>📅</span>
+            <div>
+              <strong>စတင်တည်ထောင်နှစ်</strong><br>
+              ၁၃၂၇ ခုနှစ်
+            </div>
+          </div>
+          <div class="info-item">
+            <span>🙏</span>
+            <div>
+              <strong>ဦးစီးပဓာနနာယကဆရာတော်ကြီး</strong><br>
+              ဘဒ္ဒန္တပညာဝံသမထေရ်
+            </div>
+          </div>
+        </div>
+        <div class="about-img">
+          <img src="aerial2.jpg" alt="အောင်ချမ်းသာစာသင်တိုက် အပေါ်မြင်ကွင်း">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sayadaw -->
+  <section id="sayadaw" style="background: var(--cream-dark);">
+    <div class="container">
+      <div class="section-title">
+        <h2>ဦးစီးပဓာနနာယကဆရာတော်ကြီး</h2>
+      </div>
+      <div class="sayadaw-card">
+        <img src="sayadaw.png" alt="ဘဒ္ဒန္တပညာဝံသမထေရ်" class="sayadaw-photo">
+        <h3>ဘဒ္ဒန္တပညာဝံသမထေရ်</h3>
+        <p class="title">ဦးစီးပဓာနနာယကဆရာတော်ကြီး</p>
+        <p>အောင်ပန်းမြို့၊ အောင်ချမ်းသာစာသင်တိုက်</p>
+        <div class="titles">
+          <strong>ဘွဲ့တံဆိပ်များ</strong><br>
+          • သာသနဓဇဓမ္မာစရိယ<br>
+          • မဟာဂန္ထဝါစကပဏ္ဍိတ<br>
+          • အဂ္ဂမဟာဂန္ထဝါစကပဏ္ဍိတ<br>
+          • အဂ္ဂမဟာပဏ္ဍိတ<br>
+          • နိုင်ငံတော်ဗဟိုသံဃာ့ဝန်ဆောင် (ငြိမ်း)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <h2>ဓာတ်ပုံ Gallery</h2>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="hero1.png" alt="စာသင်တိုက် ဝင်ပေါက်">
+        </div>
+        <div class="gallery-item">
+          <img src="aerial1.jpg" alt="အပေါ်မြင်ကွင်း ၁">
+        </div>
+        <div class="gallery-item">
+          <img src="aerial2.jpg" alt="အပေါ်မြင်ကွင်း ၂">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" style="background: var(--cream-dark);">
+    <div class="container">
+      <div class="section-title">
+        <h2>သင်ကြားပေးနေသော ပညာရေး</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="icon">📘</div>
+          <h4>အခြေခံအတန်းကျမ်းစာ</h4>
+          <p>အခြေခံအဆင့်</p>
+        </div>
+        <div class="edu-card">
+          <div class="icon">📖</div>
+          <h4>အစိုးရပါဠိပထမပြန်ကျမ်းစာ</h4>
+          <p>ပါဠိပထမပြန် အဆင့်</p>
+        </div>
+        <div class="edu-card">
+          <div class="icon">📜</div>
+          <h4>သာမဏေကျော်တန်းကျမ်းစာ</h4>
+          <p>သာမဏေကျော် အဆင့်</p>
+        </div>
+        <div class="edu-card">
+          <div class="icon">🏅</div>
+          <h4>အစိုးရဓမ္မာစရိယကျမ်းစာ</h4>
+          <p>ဓမ္မာစရိယ အဆင့်</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>ဆက်သွယ်ရန် နှင့် အလှူဒါန</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>ဆက်သွယ်ရန်</h3>
+          <div class="contact-item">
+            <span class="icon">📍</span>
+            <div>
+              ပြည်ထောင်စုလမ်းမ၊ အမှတ်(၃)ရပ်ကွက်<br>
+              အောင်ပန်းမြို့၊ ကလောမြို့နယ်<br>
+              ကလောခရိုင်၊ ရှမ်းပြည်နယ်တောင်ပိုင်း<br>
+              <a href="https://maps.app.goo.gl/AURmZ2WXLwHuTBzG7" target="_blank">📍 Google Maps တွင် ကြည့်ရန်</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="icon">📞</span>
+            <div>
+              <strong>ဖုန်း / Viber</strong><br>
+              <a href="tel:0812360117">081-2360117</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="icon">📘</span>
+            <div>
+              <strong>Facebook Page</strong><br>
+              <a href="https://facebook.com/aungchanthar999" target="_blank">facebook.com/aungchanthar999</a>
+            </div>
+          </div>
+        </div>
+        <div class="donation-box">
+          <h3>💗 အလှူဒါန</h3>
+          <p>
+            စာသင်တိုက်၏ သာသနာ့လုပ်ငန်းများ အတွက် ငွေကြေး၊ ပစ္စည်းနှင့် လုပ်အား အလှူများကို ကြိုဆိုပါသည်။
+          </p>
+          <p style="font-size:0.95rem; color:#666;">
+            အလှူဒါနပြုလိုပါက အထက်ပါ ဖုန်းနံပါတ်သို့ ဆက်သွယ်မေးမြန်းနိုင်ပါသည်။
+          </p>
+          <a href="tel:0812360117" class="donation-btn">ဆက်သွယ်ရန်</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© ၂၀၂၅ အောင်ချမ်းသာစာသင်တိုက် | သီလ သမာဓိ ပညာ</p>
+    <p style="margin-top:8px;">
+      <a href="https://facebook.com/aungchanthar999" target="_blank">Facebook Page</a>
+    </p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('active');
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          document.getElementById('nav-menu').classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
